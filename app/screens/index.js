@@ -1,114 +1,166 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, {Component} from 'react';
+import {Text, View, TouchableOpacity, ScrollView, Image} from 'react-native';
+import styles from './styles';
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+export class Home extends Component {
+  static navigationOptions = {
+    header: null,
+  };
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits. Edited!
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
+  render() {
+    return (
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        style={styles.container}>
+        <View style={styles.mainContainer}>
+          <View style={styles.header}>
+            <Text style={styles.mainText}>My Library</Text>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+          <View style={styles.secondMain}>
+            <View style={styles.second}>
+              <Text style={styles.secondText}>Purchases</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>See shop</Text>
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.subTitle}>9 Total</Text>
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              style={styles.scrolls}>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('Details', {
+                    coverImage: '../assets/closeup-man.jpg',
+                  })
+                }
+                activeOpacity={0.6}
+                style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/closeup-man.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/alone.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/afterglow.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/man-in-red.jpg')}
+                />
+              </TouchableOpacity>
+            </ScrollView>
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              style={styles.scrolls}>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/woman-collared.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/woman-eyeglasses.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/woman-sleeveless.jpg')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+                <Image
+                  style={styles.pictures}
+                  source={require('../assets/woman-sleeved.jpg')}
+                />
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </View>
+        <View style={styles.audioBooks}>
+          <View style={styles.second}>
+            <Text style={styles.thirdText}>Audiobooks</Text>
+            <TouchableOpacity style={styles.secondButton}>
+              <Text style={styles.buttonText}>New</Text>
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.thirdSubTitle}>6 Total</Text>
+          <ScrollView
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            style={styles.scrolls}>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/green-leave.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/on-a-bridge.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/woman-happy.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/smiling-woman.jpg')}
+              />
+            </TouchableOpacity>
+          </ScrollView>
+          <ScrollView
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            style={styles.scrolls}>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/man-in-red.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/adult-beard.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/woman-sleeved.jpg')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <Image
+                style={styles.pictures}
+                source={require('../assets/smiling-woman.jpg')}
+              />
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
+      </ScrollView>
+    );
+  }
+}
 
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
-
-export default App;
+export default Home;
