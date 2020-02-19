@@ -7,7 +7,6 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import style from './styles';
 
 export class margin extends Component {
   static navigationOptions = {

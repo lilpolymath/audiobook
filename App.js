@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Margin from './app/screens/About';
 import App from './app/screens/index';
-import Book from './app/screens/BookOne';
+import BookInfo from './app/screens/BookInfo';
 import BookTwo from './app/screens/BookTwo';
 import AddButton from './app/screens/AddButton';
 
@@ -19,9 +19,9 @@ const MainNavigator = createBottomTabNavigator(
       },
     },
     Details: {
-      screen: Book,
+      screen: BookInfo,
       navigationOptions: {
-        tabBarIcon: () => <Icon name="behance" size={22} color="black" />,
+        tabBarIcon: () => <Icon name="wallet" size={22} color="black" />,
       },
     },
     AddButton: {
@@ -46,7 +46,7 @@ const MainNavigator = createBottomTabNavigator(
   {
     tabBarOptions: {
       showLabel: false,
-      activeBackgroundColor: 'whitesmoke',
+      activeBackgroundColor: '#D3D3D3',
     },
     initialRouteName: 'Main',
   },

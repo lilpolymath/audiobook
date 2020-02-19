@@ -24,7 +24,7 @@ export class margin extends Component {
                 source={require('../assets/closeup-man.jpg')}
               />
               <View style={{width: 200, justifyContent: 'space-evenly'}}>
-                <Text style={stsyles.name}>Adedapo Ayobami</Text>
+                <Text style={styles.name}>Adedapo Ayobami</Text>
                 <Text style={styles.title}>
                   I am not sure of what I can do anymore.
                 </Text>

@@ -10,7 +10,7 @@ import {
 import styles from './styles';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
-export class Book extends Component {
+export class BookInfo extends Component {
   static navigationOptions = {
     header: null,
   };
@@ -21,7 +21,7 @@ export class Book extends Component {
           <Image
             resizeMode={'cover'}
             style={styles.imageContainer}
-            source={require('../assets/adult-beard.jpg')}
+            source={require('../assets/closeup-man.jpg')}
           />
           <TouchableOpacity style={styles.cancel}>
             <Icon2 name="md-more" size={28} color="white" />
@@ -144,4 +144,4 @@ export class Book extends Component {
   }
 }
 
-export default Book;
+export default BookInfo;
