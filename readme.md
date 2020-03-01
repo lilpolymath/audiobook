@@ -2,12 +2,12 @@
 
 #### Audiobook app built with React-native
 
-![alt text](https://github.com/lilpolymath/audio-book/blob/master/audiobook.png?raw=true)
+![alt text](https://github.com/lilpolymath/audiobook/blob/master/audiobook.png?raw=true)
 
-## :arrow_forward: How to Run App
+## How to Run App
 
 1. cd to the repo
-2. Install Node modules
+2. Install node modules
    - run `npm install`
 3. Run Build for either OS
 
