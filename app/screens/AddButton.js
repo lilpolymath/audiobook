@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableHighlight,
-  Animated,
-} from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Animated} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default class AddButton extends Component {
@@ -70,43 +64,51 @@ export default class AddButton extends Component {
     return (
       <View style={styles.container}>
         <Animated.View
-          style={{
-            left: thermometerX,
-            top: thermometerY,
-            position: 'absolute',
-          }}>
+          style={
+            (styles.hidden,
+            [
+              {
+                left: thermometerX,
+                top: thermometerY,
+              },
+            ])
+          }>
           <View style={styles.secondButton}>
             <Icon name="thermometer" size={22} color="#FFF" />
           </View>
         </Animated.View>
         <Animated.View
-          style={{
-            left: atomX,
-            top: atomY,
-            position: 'absolute',
-          }}>
+          style={
+            (styles.hidden,
+            [
+              {
+                left: atomX,
+                top: atomY,
+              },
+            ])
+          }>
           <View style={styles.secondButton}>
             <Icon name="atom" size={22} color="#FFF" />
           </View>
         </Animated.View>
         <Animated.View
-          style={{
-            left: hanukiahX,
-            top: hanukiahY,
-            position: 'absolute',
-          }}>
+          style={[
+            styles.hidden,
+            {
+              left: hanukiahX,
+              top: hanukiahY,
+            },
+          ]}>
           <View style={styles.secondButton}>
             <Icon name="hanukiah" size={22} color="#FFF" />
           </View>
         </Animated.View>
         <Animated.View style={[styles.button, sizeStyle]}>
-          <TouchableHighlight
-            onPress={this.handlePress}
-            underlayColor="#7F58FF">
+          <TouchableOpacity onPress={this.handlePress} underlayColor="#7F58FF">
             <Animated.View style={{transform: [{rotate: rotation}]}}>
               <Icon name="plus" size={22} color="#FFF" />
             </Animated.View>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </Animated.View>
       </View>
     );
@@ -140,5 +142,8 @@ const styles = StyleSheet.create({
     height: 48,
     borderRadius: 24,
     backgroundColor: '#7F58FF',
+  },
+  hidden: {
+    position: 'absolute',
   },
 });
