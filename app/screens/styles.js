@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#484848',
     borderTopLeftRadius: 35,
     borderTopRightRadius: 35,
+    overflow: 'hidden',
   },
   tags: {
     display: 'flex',
@@ -211,6 +212,14 @@ const styles = StyleSheet.create({
   },
   chapterContent: {
     width: width - 70,
+  },
+  tagButtonAlt: {
+    backgroundColor: 'rgb(255,95,88)',
+  },
+  mainTextSub: {
+    fontSize: 22,
+    marginBottom: 10,
+    fontWeight: 'bold',
   },
 });
 

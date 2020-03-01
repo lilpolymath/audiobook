@@ -8,12 +8,17 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
+const color = 'rgb(255,204,83)';
 export class BookInfo extends Component {
   static navigationOptions = {
     header: null,
+    drawerLabel: 'Book',
+    drawerIcon: () => <Icon name="wallet" size={22} color="black" />,
   };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -36,19 +41,14 @@ export class BookInfo extends Component {
           showsVerticalScrollIndicator={false}
           style={styles.contentContainer}>
           <View style={styles.tags}>
-            <View
-              style={[styles.tagButton, {backgroundColor: 'rgb(255,95,88)'}]}>
+            <View style={[styles.tagButton, styles.tagButtonAlt]}>
               <Text style={[styles.buttonText]}>Love</Text>
             </View>
             <View style={styles.tagButton}>
               <Text style={styles.buttonText}>Humor</Text>
             </View>
           </View>
-          <Text
-            style={[
-              styles.mainText,
-              {fontSize: 22, marginBottom: 10, fontWeight: 'bold'},
-            ]}>
+          <Text style={[styles.mainText, styles.mainTextSub]}>
             Keep Smiling after a Photoshop's crash.
           </Text>
           <Text style={styles.content}>
@@ -97,7 +97,7 @@ export class BookInfo extends Component {
                   <Text style={styles.creditTitle}>18 minutes</Text>
                 </View>
                 <View>
-                  <Icon2 name="md-play" size={30} color="rgb(255,204,83)" />
+                  <Icon2 name="md-play" size={30} color={color} />
                 </View>
               </View>
               <View style={styles.chapterInfo}>
@@ -109,7 +109,7 @@ export class BookInfo extends Component {
                   <Text style={styles.creditTitle}>39 minutes</Text>
                 </View>
                 <View>
-                  <Icon2 name="md-pause" size={30} color="rgb(255,204,83)" />
+                  <Icon2 name="md-pause" size={30} color={color} />
                 </View>
               </View>
               <View style={styles.chapterInfo}>
@@ -121,19 +121,19 @@ export class BookInfo extends Component {
                   <Text style={styles.creditTitle}>18 minutes</Text>
                 </View>
                 <View>
-                  <Icon2 name="md-play" size={30} color="rgb(255,204,83)" />
+                  <Icon2 name="md-play" size={30} color={color} />
                 </View>
               </View>
               <View style={styles.chapterInfo}>
                 <View style={styles.chapterContent}>
                   <Text style={styles.chapter}>Chapter 5</Text>
                   <Text style={styles.secondText}>
-                    How to supress the desire to die.
+                    How to supress the desire to die.s
                   </Text>
                   <Text style={styles.creditTitle}>18 minutes</Text>
                 </View>
                 <View>
-                  <Icon2 name="md-play" size={30} color="rgb(255,204,83)" />
+                  <Icon2 name="md-play" size={30} color={color} />
                 </View>
               </View>
             </View>

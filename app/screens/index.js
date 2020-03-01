@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, ScrollView, Image} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 import styles from './styles';
 
 export class Home extends Component {
   static navigationOptions = {
     header: null,
+    drawerLabel: 'Home',
+    drawerIcon: () => <Icon name="home" size={22} color="black" />,
   };
 
   render() {
@@ -29,11 +33,7 @@ export class Home extends Component {
               horizontal
               style={styles.scrolls}>
               <TouchableOpacity
-                onPress={() =>
-                  this.props.navigation.navigate('Details', {
-                    coverImage: '../assets/closeup-man.jpg',
-                  })
-                }
+                onPress={() => this.props.navigation.navigate('Details')}
                 activeOpacity={0.6}
                 style={styles.pictures}>
                 <Image
@@ -41,7 +41,10 @@ export class Home extends Component {
                   source={require('../assets/closeup-man.jpg')}
                 />
               </TouchableOpacity>
-              <TouchableOpacity activeOpacity={0.6} style={styles.pictures}>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('About')}
+                activeOpacity={0.6}
+                style={styles.pictures}>
                 <Image
                   style={styles.pictures}
                   source={require('../assets/alone.jpg')}
